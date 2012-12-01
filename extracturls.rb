@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 =begin
 
-   Yet another URL extractor
+   extracturl.rb -- ruby script to pull out URLs in an HTML document
+
+   Yet another URL extractor, this time in ruby
+
+   *Author*:: Tamara Temple <tamara@tamaratemple.com>
+   *Copyright*:: (c) 2012 Tamara Temple Web Development
+   *License*:: GPLv2+
+   *Version*:: 2012-12-01
 
 =end
 

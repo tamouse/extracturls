@@ -13,18 +13,6 @@
 use strict;
 use HTML::TagParser;
 
-my $p = HTML::TagParser->new ();
-
-if ($#ARGV >= 0) {
-	foreach my $fn (@ARGV) {
-		$p->open($fn);
-		extract($p);
-	}
-} else {
-	my $html = do { local( $/ ); <STDIN> } ;
-	$p->parse($html);
-	extract($p);
-}
 
 ##
 # extract -- pull out URL in <a> and <img> tags
@@ -41,5 +29,18 @@ sub extract {
 		my $src = $img->getAttribute('src');
 		print "$src\n" if $src;
 	}
+}
+
+my $p = HTML::TagParser->new ();
+
+if ($#ARGV >= 0) {
+	foreach my $fn (@ARGV) {
+		$p->open($fn);
+		extract($p);
+	}
+} else {
+	my $html = do { local( $/ ); <STDIN> } ;
+	$p->parse($html);
+	extract($p);
 }
 
