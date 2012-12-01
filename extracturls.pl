@@ -6,7 +6,7 @@
 #
 # Author: Tamara Temple <tamara@tamaratemple.com>
 # Copyright: (c) 2012 Tamara Temple Web Development
-# License: GPLv2+
+# License: GPLv3
 # Version: 2012-11-30
 # 
 
