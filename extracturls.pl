@@ -11,8 +11,7 @@
 # 
 
 use strict;
-use HTML::TagParser ();
-use Data::Dumper::Names;
+use HTML::TagParser;
 
 my $p = HTML::TagParser->new ();
 
@@ -22,7 +21,8 @@ if ($#ARGV >= 0) {
 		extract($p);
 	}
 } else {
-	$p->open(<STDIN>);
+	my $html = do { local( $/ ); <STDIN> } ;
+	$p->parse($html);
 	extract($p);
 }
 
